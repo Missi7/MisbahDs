@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // ENTER A STRING FROM THE USER, ENTER A CHARACTER AND PERFORM BINARY SEARCH ALGORITHM THROUGH RECURSION.
+
+#include <stdio.h>
+int binary_s(char[], char, int, int);
+void main()
+{
+    char arr[8], search;
+    int i, j, temp, res;
+    printf("Enter string : ");
+    scanf("%s", arr);
+
+    int size = sizeof(arr) / sizeof(arr[0]);
+    printf("Enter the value to search : ");
+    search = getche();
+    res = binary_s(arr, search, 0, size - 1);
+    if (res == -1)
+    {
+        printf("\nValue not found ");
+    }
+    else
+    {
+        printf("\nvalue found ");
+    }
+}
+int binary_s(char arr[], char search, int l, int h)
+{
+    int mid = (l + h) / 2;
+    if (arr[mid] == search)
+    {
+        return 1;
+    }
+    else if (mid == l && mid == h)
+    {
+        return -1;
+    }
+    else if (search > arr[mid])
+    {
+        binary_s(arr, search, mid + 1, h);
+    }
+    else
+    {
+        binary_s(arr, search, l, mid - 1);
+    }
+}
+<h3>Output:</h3>
+Enter string : hello
+Enter the value to search : e
+value found
+    </pre>
+</body>
+
+</html>

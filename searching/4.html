@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // ENTER A STRING FROM THE USER, ENTER A CHARACTER AND PERFORM LINEAR SEARCH ALGORITHM THROUGH ITERATION.
+#include <stdio.h>
+int linear_s(char arr[], char);
+void main()
+{
+    char array[7], num;
+    printf("Enter the string----- ");
+
+    scanf("%s", array);
+
+    printf("Enter the value to be search : ");
+    num = getche();
+    int res = linear_s(array, num);
+    if (res == 1)
+    {
+        printf("\nvalue is present");
+    }
+    else
+    {
+        printf("\nValue is not present");
+    }
+}
+int linear_s(char arr[], char search)
+{
+    int p;
+    for (int i = 0; i < 7; i++)
+    {
+        if (arr[i] == search)
+        {
+            return 1;
+        }
+    }
+}
+<h3>output:</h3>
+Enter the string----- hello
+Enter the value to be search : l
+value is present
+    </pre>
+</body>
+
+</html>

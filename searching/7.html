@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM BINARY SEARCH ALGORITHM THROUGH RECURSION.
+// Binary Search through recursion
+#include <stdio.h>
+
+int binarySearch(int arr[], int l, int u, int key)
+{
+    int mid = (u - l) / 2;
+    if (l > u)
+    {
+        return -1;
+    }
+    if (arr[mid] == key)
+    {
+        return mid;
+    }
+    else if (arr[mid] > key)
+    {
+        u = mid - 1;
+    }
+    else
+    {
+        l = mid + 1;
+    }
+
+    binarySearch(arr, l, u, key);
+}
+
+int main()
+{
+    int arr[10], i, key;
+
+    for (i = 0; i < 10; i++)
+    {
+        printf("Enter the Value :\n");
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter Value to be searched\n");
+    scanf("%d", &key);
+    int result = binarySearch(arr, 0, 10, key);
+
+    if (result == -1)
+    {
+        printf("Element %d not found in the array.\n", key);
+    }
+    else
+    {
+        printf("Element %d found at position %d.\n", key, result + 1);
+    }
+
+    return 0;
+}
+<h3>Output:</h3>
+Enter the Value :
+1
+Enter the Value :
+2
+Enter the Value :
+3
+Enter the Value :
+4
+Enter the Value :
+5
+Enter the Value :
+6
+Enter the Value :
+7
+Enter the Value :
+8
+Enter the Value :
+9
+Enter the Value :
+10
+Enter Value to be searched
+2
+Element 2 found at position 2.
+    </pre>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        //  ENTER A STRING FROM THE USER, ENTER A CHARACTER AND PERFORM LINEAR SEARCH ALGORITHM THROUGH RECURSION.
+
+#include <stdio.h>
+void main()
+{
+    int linear_s(char[], int, char, int);
+    char arr[8], character;
+    int index, i;
+    printf("Enter the string---");
+    scanf("%s", arr);
+    int size = sizeof(arr) / sizeof(arr[0]);
+    printf("Enter the charcter to search : ");
+    character = getche();
+    index = linear_s(arr, 0, character, size);
+    if (index == -1)
+    {
+        printf("\nValue not found");
+    }
+    else
+    {
+        printf("\nValue found at %d", index);
+    }
+}
+int linear_s(char arr[], int index, char search, int size)
+{
+
+    if (index == 8)
+    {
+        return -1;
+    }
+    else if (arr[index] == search)
+    {
+        return index;
+    }
+    else
+    {
+        linear_s(arr, index + 1, search, size);
+    }
+}
+<h3>Output:</h3>
+Enter the string---hello
+Enter the charcter to search : h
+Value found at 0
+    </pre>
+</body>
+
+</html>
