@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // Enter the string from user and convert it in upper case
+#include <stdio.h>
+char *Ucase(char *str)
+{
+    int i;
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] >= 'a' && str[i] <= 'z')
+        {
+            str[i] = str[i] - 32;
+        }
+    }
+    return str;
+}
+int main()
+{
+    char str[50];
+    printf("Enter the String :- ");
+    gets(str);
+    printf("The uppercase string is %s\n", Ucase(str));
+}
+<h3>Output</h3>
+Enter the String :- Hello World
+The uppercase string is HELLO WORLD
+    </pre>
+</body>
+
+</html>

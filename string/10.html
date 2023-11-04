@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // enter string from user enter the index number and print charcter present at that index
+
+#include <stdio.h>
+
+char charatbound(char str[], int bound)
+{
+    int i;
+    for (i = 0; str[i] != '\0'; i++)
+        ;
+    if (bound > i - 1 || bound < 0)
+    {
+        return '\0';
+    }
+    return str[bound];
+}
+int main()
+{
+    char str[30], ch;
+    int bound;
+    printf("Enter a String\n");
+    gets(str);
+    printf("Enter bound number\n");
+    scanf("%d", &bound);
+    ch = charatbound(str, bound);
+    if (ch == '\0')
+        printf("Invalid Bound Number\n");
+    else
+        printf("%c is at bound no %d\n", ch, bound);
+
+    return 0;
+}
+<h3>Output:</h3>
+hello world
+Enter bound number
+8
+r is at bound no 8
+    </pre>
+</body>
+
+</html>

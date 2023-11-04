@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // Enter the string from user and convert it in title case
+#include <stdio.h>
+
+char *title(char str[])
+{
+    int i;
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] == ' ' && (str[i + 1] >= 'a' && str[i + 1] <= 'z'))
+            str[i + 1] -= 32;
+        else if ((i == 0 && (str[i] >= 'a' && str[i] <= 'z')))
+            str[i] -= 32;
+    }
+    return str;
+}
+
+int main()
+{
+    char str[30];
+    printf("Enter a String\n");
+    gets(str);
+    printf("String Before Titlecase: %s\n", str);
+    title(str);
+    printf("String After Titlecase: %s\n", str);
+    return 0;
+}
+<h3>Output:</h3>
+this is title case
+String Before Titlecase: this is title case
+String After Titlecase: This Is Title Case 
+    </pre>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+    // Enter the string from user and convert it in lower case
+#include <stdio.h>
+char *Lcase(char *str)
+{
+    int i;
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+        {
+            str[i] = str[i] + 32;
+        }
+    }
+    return str;
+}
+int main()
+{
+    char str[50];
+    printf("Enter the String :- ");
+    gets(str);
+    printf("The uppercase string is %s\n", Lcase(str));
+}
+<h3>Output:</h3>
+Enter the String :- HELLOO
+The uppercase string is helloo
+   </pre>
+</body>
+
+</html>

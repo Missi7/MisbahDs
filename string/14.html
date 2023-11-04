@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // Enter string from user and print the difference of ASCII value of each charcter
+#include <stdio.h>
+
+int charDifference(char str1, char str2)
+{
+    return (str1 - str2);
+}
+int main()
+{
+    char str[30], str2[30];
+    int i;
+    printf("Enter a String\n");
+    gets(str);
+    printf("Enter a another String\n");
+    gets(str2);
+    for (i = 0; str[i] && str2[i]; i++)
+    {
+        printf("%c - %c = %d\n", str[i], str2[i], charDifference(str[i], str2[i]));
+    }
+
+    return 0;
+}
+<h3>Output:</h3>
+hello
+Enter a another String
+world
+h - w = -15
+e - o = -10
+l - r = -6 
+l - l = 0  
+o - d = 11 
+    </pre>
+</body>
+
+</html>

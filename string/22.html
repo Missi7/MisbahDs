@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // sort the string in ascending order and print it
+#include <stdio.h>
+
+char *strsort(char str[])
+{
+    char temp;
+    int i, j;
+    for (i = 0; str[i]; i++)
+    {
+        for (j = i + 1; str[j]; j++)
+        {
+            if (str[i] > str[j])
+            {
+                temp = str[i];
+                str[i] = str[j];
+                str[j] = temp;
+            }
+        }
+        if (str[i + 2] == '\0')
+            break;
+    }
+
+    return str;
+}
+int main()
+{
+    char str[30];
+    printf("Enter a String\n");
+    gets(str);
+    printf("Sorted String: %s", strsort(str));
+    return 0;
+}
+<h3>Output:</h3>
+Enter a String
+bhupender jogi
+Sorted String:  bdeeghijnopru
+    </pre>
+</body>
+
+</html>

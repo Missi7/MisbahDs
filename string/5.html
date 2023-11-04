@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // Enter the string from user and convert it in toggle case
+#include <stdio.h>
+
+char *strToggle(char str[])
+{
+    int i;
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+            str[i] += 32;
+        else if (str[i] >= 'a' && str[i] <= 'z')
+            str[i] -= 32;
+    }
+    return str;
+}
+
+int main()
+{
+    char str[30];
+    printf("Enter a String\n");
+    gets(str);
+    printf("String Before Togglecase: %s\n", str);
+    strToggle(str);
+    printf("String After Togglecase: %s\n", str);
+    return 0;
+}
+<h3>output:</h3>
+HeLlO WoRld
+String Before Togglecase: HeLlO WoRld
+String After Togglecase: hElLo wOrLD 
+    </pre>
+</body>
+
+</html>
