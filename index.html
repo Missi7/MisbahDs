@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>MENU</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .framecontainer {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            margin: 30px 0px;
+        }
+
+
+        .framecontainer .right {
+            width: 80%;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #navbar {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+        }
+
+        li a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #04AA6D;
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <ul>
+            <li><a target="ListingFrame"> MENU </a></li>
+            <li><a href="./2D.html" target="ListingFrame"> 2D ARRAY </a></li>
+            <li><a href="./array.html" target="ListingFrame"> ARRAY </a></li>
+            <li><a href="./string.html" target="ListingFrame"> STRING </a></li>
+            <li><a href="./stack.html" target="ListingFrame"> STACK </a></li>
+            <li><a href="./trees.html" target="ListingFrame"> TREES </a></li>
+            <li><a href="./recursion.html" target="ListingFrame"> RECURSION </a></li>
+            <li><a href="./graphs.html" target="ListingFrame"> GRAPH </a></li>
+            <li><a href="./searching.html" target="ListingFrame"> SEARCHING </a></li>
+            <li><a href="./ll.html" target="ListingFrame"> LINKED LIST </a></li>
+            <li><a href="./queues.html" target="ListingFrame"> QUEUES </a></li>
+            <li><a href="./sorting.html" target="ListingFrame"> SORTING </a></li>
+
+        </ul>
+    </nav>
+
+    <div class="framecontainer">
+        <iframe src="" frameborder="0" class="left" height="500px" name="ListingFrame"></iframe>
+        <iframe src="" frameborder="0" class="right" height="500px" name="ProgramsFrame"></iframe>
+    </div>
+
+</body>
+
+</html>
