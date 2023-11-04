@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // Enter an array from user and print the values in reverse order
+#include <stdio.h>
+
+void main()
+{
+    int arr[5], i, n = 5;
+    for (i = 0; i < 5; i++)
+    {
+        printf("Enter the value : ");
+        scanf("%d", &arr[i]);
+    }
+    printf("Values in Reverse order");
+    for (i = 4; i >= 0; i--)
+    {
+        printf("\nThe Values are %d", arr[i]);
+    }
+}
+<h3>Output:</h3>
+Enter the value : 1
+Enter the value : 2
+Enter the value : 3
+Enter the value : 4
+Enter the value : 5
+Values in Reverse order
+The Values are 5       
+The Values are 4       
+The Values are 3       
+The Values are 2       
+The Values are 1       
+    </pre>
+</body>
+
+</html>

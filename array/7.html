@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // Enter an array from user and square all the values of array
+#include <stdio.h>
+
+void main()
+{
+    int arr[5], i, n = 5;
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter the value : ");
+        scanf("%d", &arr[i]);
+    }
+    for (i = 0; i < n; i++)
+    {
+        arr[i] = arr[i] * arr[i];
+    }
+    for (i = 0; i < n; i++)
+    {
+        printf("\nSquares of the array values are %d", arr[i]);
+    }
+}
+<h3>Output:</h3>
+Enter the value : 1
+Enter the value : 2
+Enter the value : 3
+Enter the value : 4
+Enter the value : 5
+
+Squares of the array values are 1 
+Squares of the array values are 4 
+Squares of the array values are 9 
+Squares of the array values are 16
+Squares of the array values are 25
+    </pre>
+</body>
+
+</html>

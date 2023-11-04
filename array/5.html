@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // Enter an array from user and print the even values
+#include <stdio.h>
+
+void main()
+{
+    int arr[5], i, n = 5;
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter the value : ");
+        scanf("%d", &arr[i]);
+    }
+    for (i = 0; i < n; i++)
+    {
+        if (arr[i] % 2 == 0)
+        {
+            printf("\nThe even values are %d", arr[i]);
+        }
+    }
+}
+<h3>Output:</h3>
+Enter the value : 1
+Enter the value : 2
+Enter the value : 5
+Enter the value : 3
+Enter the value : 6
+
+The even values are 2
+The even values are 6
+    </pre>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // Enter an array from user and remove the duplicate values and fill it with zero
+#include <stdio.h>
+
+void main()
+{
+    int arr[5], i, j, n = 5, arr1[n];
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter the Value");
+        scanf("%d", &arr[i]);
+    }
+    for (i = 0; i < n; i++)
+    {
+        for (j = i + 1; j < n; j++)
+        {
+            if (arr[i] == arr[j])
+            {
+                arr[j] = 0;
+            }
+        }
+    }
+    printf("Array after removing duplicate\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d\n", arr[i]);
+    }
+}
+<h3>Output:</h3>
+Enter the Value1
+Enter the Value2
+Enter the Value3
+Enter the Value4
+Enter the Value2
+Array after removing duplicate
+1
+2
+3
+4
+0
+    </pre>
+</body>
+
+</html>

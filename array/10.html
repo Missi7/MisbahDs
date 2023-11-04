@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // Enter an array from user and add all the values
+#include <stdio.h>
+void main()
+{
+    int arr[5], i, n = 5, sum = 0;
+    for (i = 0; i < n; i++)
+    {
+        printf("Enter the value : ");
+        scanf("%d", &arr[i]);
+    }
+    for (i = 0; i < n; i++)
+    {
+        sum += arr[i];
+    }
+    printf("The sum of all the values is %d", sum);
+}
+<h3>Output:</h3>
+Enter the value : 1
+Enter the value : 2
+Enter the value : 3
+Enter the value : 4
+Enter the value : 5
+The sum of all the values is 15
+    </pre>
+</body>
+
+</html>
