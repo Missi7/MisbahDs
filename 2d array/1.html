@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // ENTER A MATRIX OF 4 ROWS AND 2 COLUMNS FROM USER AND DISPLAY IT IN MATRIX FROMAT
+#include <stdio.h>
+int main()
+{
+    int a[4][2], i, j;
+    printf("enter the elements of matrix:\n");
+    for (i = 0; i < 4; i++)
+    {
+        for (j = 0; j < 2; j++)
+        {
+            scanf("%d", &a[i][j]);
+        }
+    }
+    printf("The formed matrix is....\n");
+    for (i = 0; i < 4; i++)
+    {
+        for (j = 0; j < 2; j++)
+        {
+            printf("%d\t", a[i][j]);
+        }
+        printf("\n");
+    }
+}
+<h3>Output:</h3>
+enter the elements of matrix:
+1
+2
+2
+3
+4
+5
+6
+7
+The formed matrix is....
+1       2
+2       3
+4       5
+6       7
+    </pre>
+</body>
+
+</html>

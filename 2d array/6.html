@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        #include <stdio.h>
+
+            void scaler_multi(int arr[3][3], int key)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 3; j++)
+                    {
+                        arr[i][j] *= key;
+                    }
+                }
+            }
+            int main()
+            {
+                int arr[3][3], i, j, scaler[3][3], key;
+                printf("Enter the Element to multiply with array:");
+                scanf("%d", &key);
+                printf("enter the elements of matrix:\n");
+                for (i = 0; i < 3; i++)
+                {
+                    for (j = 0; j < 3; j++)
+                    {
+                        scanf("%d", &arr[i][j]);
+                    }
+                }
+                printf("Original Array:\n");
+                for (i = 0; i < 3; i++)
+                {
+                    for (j = 0; j < 3; j++)
+                    {
+                        printf("%d\t", arr[i][j]);
+                    }
+                    printf("\n");
+                }
+            
+                scaler_multi(arr, key);
+                printf("\nArray after scaler Multiplication:\n");
+                for (i = 0; i < 3; i++)
+                {
+                    for (j = 0; j < 3; j++)
+                    {
+                        printf("%d\t", arr[i][j]);
+                    }
+                    printf("\n");
+                }
+                return 0;
+            }
+    <h3>Output:</h3>  
+    Enter the Element to multiply with array:2
+enter the elements of matrix:
+1
+2
+3
+3
+5
+6
+7
+8
+9
+Original Array:
+1       2       3
+3       5       6
+7       8       9
+
+Array after scaler Multiplication:
+2       4       6
+6       10      12
+14      16      18      
+    </pre>
+</body>
+
+</html>

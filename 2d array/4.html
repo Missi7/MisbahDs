@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        #include <stdio.h>
+            void get(int arr[3][3])
+            {
+                int i, j;
+                for (i = 0; i < 3; i++)
+                {
+                    for (j = 0; j < 3; j++)
+                    {
+                        scanf("%d", &arr[i][j]);
+                    }
+                }
+            }
+            void display(int arr[3][3])
+            {
+                int i, j;
+                for (i = 0; i < 3; i++)
+                {
+                    for (j = 0; j < 3; j++)
+                    {
+                        printf("%d\t", arr[i][j]);
+                    }
+                    printf("\n");
+                }
+            }
+            void multi(int arr[3][3], int arr2[3][3])
+            {
+                int multi[3][3], i, j, k;
+                for (i = 0; i < 3; i++)
+                {
+                    for (j = 0; j < 3; j++)
+                    {
+                        multi[i][j] = 0;
+                        for (k = 0; k < 3; k++)
+                        {
+                            multi[i][j] += arr[i][k] * arr2[k][j];
+                        }
+                    }
+                }
+                display(multi);
+            }
+            
+            void main()
+            {
+                int arr[3][3], arr2[3][3];
+                printf("Enter Ist matrix\n");
+                get(arr);
+                printf("Enter 2nd matrix\n");
+                get(arr2);
+                printf("After Multiplication\n");
+                multi(arr, arr2);
+            }
+    <h3>Output:</h3>      
+    Enter Ist matrix
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    Enter 2nd matrix
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    After Multiplication
+    30      36      42
+    66      81      96
+    102     126     150 
+    </pre>
+</body>
+
+</html>
