@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM LINEAR SEARCH ALGORITHM THROUGH RECURSION.
+#include <stdio.h>
+
+int linearSearch(int arr[], int key, int index, int n)
+{
+    if (index >= n)
+        return -1;
+
+    if (arr[index] == key)
+        return index;
+
+    linearSearch(arr, key, index + 1, n);
+}
+int main()
+{
+    int arr[5], i, key;
+
+    for (i = 0; i < 5; i++)
+    {
+        printf("Enter the value : ");
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter Value to be searched : ");
+    scanf("%d", &key);
+    int result = linearSearch(arr, key, 0, 5);
+
+    if (result == -1)
+    {
+        printf("Element %d not found in the array.\n", key);
+    }
+    else
+    {
+        printf("Element %d found at position %d", key, result + 1);
+    }
+    return 0;
+}
+<h3>Output:</h3>
+Enter the value : 1
+Enter the value : 2
+Enter the value : 3
+Enter the value : 4
+Enter the value : 5
+Enter Value to be searched : 3
+Element 3 found at position 3
+    </pre>
+</body>
+
+</html>

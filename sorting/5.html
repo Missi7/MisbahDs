@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM BINARY SEARCH ALGORITHM THROUGH ITERATION.
+#include <stdio.h>
+
+int binarySearch(int arr[], int n, int key)
+{
+    int l = 0, u = n - 1, mid;
+    while (l < u)
+    {
+        mid = (u + l) / 2;
+        if (arr[mid] == key)
+        {
+            return mid;
+        }
+        else if (arr[mid] > key)
+        {
+            u = mid - 1;
+        }
+        else
+        {
+            l = mid + 1;
+        }
+    }
+    return -1;
+}
+
+int main()
+{
+    int arr[5], i, key;
+
+    for (i = 0; i < 5; i++)
+    {
+        printf("Enter the value : ");
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter Value to be searched\n");
+    scanf("%d", &key);
+    int result = binarySearch(arr, 5, key);
+
+    if (result == -1)
+    {
+        printf("Element %d not found in the array.\n", key);
+    }
+    else
+    {
+        printf("Element %d found at position %d.\n", key, result + 1);
+    }
+
+    return 0;
+}
+<h3>Output:</h3>
+Enter the value : 1
+Enter the value : 2
+Enter the value : 3
+Enter the value : 4
+Enter the value : 5
+Enter Value to be searched
+6
+Element 6 not found in the array.
+
+Enter the value : 1
+Enter the value : 2
+Enter the value : 3
+Enter the value : 4
+Enter the value : 5
+Enter Value to be searched
+2
+Element 2 found in the array.
+    </pre>
+</body>
+
+</html>
