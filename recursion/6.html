@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // find smallest element in the integer array using recursion
+
+#include <stdio.h>
+
+void getArray(int arr[], int s)
+{
+    int i, j;
+    printf("Enter Value of Array\n");
+    for (i = 0; i < s; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+}
+int findmin(int arr[], int n, int min)
+{
+    if (n == 0)
+    {
+        return min;
+    }
+
+    if (arr[n - 1] < min)
+    {
+        min = arr[n - 1];
+    }
+
+    return findmin(arr, n - 1, min);
+}
+
+int main()
+{
+    int arr[10], s = 10;
+    getArray(arr, s);
+    int smallest = findmin(arr, s, arr[0]);
+    printf("The smallest element in the array is: %d\n", smallest);
+
+    return 0;
+}
+<h3>
+    Output:
+</h3>
+Enter Value of Array
+1
+2
+0
+4
+5
+5
+8
+9
+3
+6
+The smallest element in the array is: 0
+    </pre>
+</body>
+
+</html>

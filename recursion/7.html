@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // Enter number from user and add all digit of number using recursion
+#include <stdio.h>
+
+int sumOfDigits(int num)
+{
+    if (num == 0)
+    {
+        return 0;
+    }
+    else
+    {
+        return num % 10 + sumOfDigits(num / 10);
+    }
+}
+
+int main()
+{
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    int sum = sumOfDigits(number);
+
+    printf("The sum of the digits of %d is %d\n", number, sum);
+
+    return 0;
+}
+<h3>
+    Output:
+</h3>
+Enter a number: 23
+The sum of the digits of 23 is 5
+    </pre>
+</body>
+
+</html>

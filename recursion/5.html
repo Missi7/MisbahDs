@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // find largest element in the integer array using recursion
+#include <stdio.h>
+
+void getArray(int arr[], int s)
+{
+    int i, j;
+    printf("Enter Value of Array\n");
+    for (i = 0; i < s; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+}
+int findMax(int arr[], int n, int max)
+{
+    if (n == 0)
+    {
+        return max;
+    }
+
+    if (arr[n - 1] > max)
+    {
+        max = arr[n - 1];
+    }
+
+    return findMax(arr, n - 1, max);
+}
+
+int main()
+{
+    int arr[10], s = 10;
+    getArray(arr, s);
+    int largest = findMax(arr, s, arr[0]);
+    printf("The largest element in the array is: %d\n", largest);
+
+    return 0;
+}
+<h3>
+    Output:
+</h3>
+Enter Value of Array
+1
+1
+2
+5
+4
+8
+9
+2
+5
+6
+The largest element in the array is: 9
+    </pre>
+</body>
+
+</html>
