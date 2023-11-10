@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        // 14. Length of the longest valid substring.
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#define MAX 4
+
+int stack[MAX];
+int top = -1;
+
+int isEmpty()
+{
+    if (top == -1)
+        return 1;
+    return 0;
+}
+
+int isFull()
+{
+    if (top == MAX - 1)
+        return 1;
+    return 0;
+}
+
+void push(int val)
+{
+    if (isFull())
+    {
+        printf("Stack is full!");
+        return;
+    }
+    stack[++top] = val;
+}
+
+int pop()
+{
+    if (isEmpty())
+    {
+        printf("Stack is Empty!");
+        return __INT_MAX__;
+    }
+    int data = stack[top--];
+    return data;
+}
+int peek()
+{
+    if (isEmpty())
+    {
+        printf("Stack is Empty!");
+        return __INT_MAX__;
+    }
+    return stack[top];
+}
+
+int getmax(int a, int b)
+{
+    if (a > b)
+        return a;
+    return b;
+}
+int longestValidString(char str[])
+{
+    int count = 0;
+    int max = 0;
+    for (int i = 0; i < strlen(str); i++)
+    {
+        char ch = str[i];
+        if (ch == '(')
+        {
+            push(ch);
+        }
+        else
+        {
+            if ((isEmpty() == 0) && (peek() == '('))
+            {
+                pop();
+                count += 2;
+            }
+            else
+            {
+                max = getmax(max, count);
+                count = 0;
+            }
+        }
+    }
+    max = getmax(max, count);
+    return max;
+}
+void main()
+{
+    char str[] = "(())))))";
+    int ans = longestValidString(str);
+    printf("The logest valid substring is : %d ", ans);
+}
+
+        <h3>Output:</h3>
+        The logest valid substring is : 4 
+    </pre>
+</body>
+
+</html>

@@ -9,51 +9,78 @@
 
 <body>
     <pre>
-        // ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM LINEAR SEARCH ALGORITHM THROUGH RECURSION.
+        // 3. ENTER A INTEGER ARRAY FROM THE USER AND PERFORM BUBBLE SORT ALGORITHM THROUGH ITERATION. ALSO CALCULATE THE WORST AND BEST COMPLEXITY WITH EXACT TIME.
+
 #include <stdio.h>
+#include <time.h>
 
-int linearSearch(int arr[], int key, int index, int n)
+// Function to perform Bubble Sort
+int bubble(int ary[], int size)
 {
-    if (index >= n)
-        return -1;
-
-    if (arr[index] == key)
-        return index;
-
-    linearSearch(arr, key, index + 1, n);
-}
-int main()
-{
-    int arr[5], i, key;
-
-    for (i = 0; i < 5; i++)
+    int i, j, temp;
+    for (i = size - 1; i > 0; i--)
     {
-        printf("Enter the value : ");
-        scanf("%d", &arr[i]);
-    }
-
-    printf("Enter Value to be searched : ");
-    scanf("%d", &key);
-    int result = linearSearch(arr, key, 0, 5);
-
-    if (result == -1)
-    {
-        printf("Element %d not found in the array.\n", key);
-    }
-    else
-    {
-        printf("Element %d found at position %d", key, result + 1);
+        for (j = 0; j <= i; j++)
+        {
+            if (ary[j] > ary[j + 1])
+            {
+                temp = ary[j];
+                ary[j] = ary[j + 1];
+                ary[j + 1] = temp;
+            }
+        }
     }
     return 0;
 }
+
+int main()
+{
+    int i, n;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Enter %d integers:\n", n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // Record the start time
+    clock_t start = clock();
+
+    // Perform Bubble Sort
+    bubble(arr, n);
+
+    // Record the end time
+    clock_t end = clock();
+
+    printf("Sorted array using Bubble Sort:\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    // Calculate the time taken in seconds
+    double timeTaken = ((double)(end - start)) / CLOCKS_PER_SEC;
+    printf("Time taken: %f seconds\n", timeTaken);
+
+    return 0;
+}
+
+
 <h3>Output:</h3>
-Enter the value : 1
-Enter the value : 2
-Enter the value : 3
-Enter the value : 4
-Enter the value : 5
-Enter Value to be searched : 3
-Element 3 found at position 3
+Enter the number of elements in the array: 5
+Enter 5 integers:
+9
+8
+1
+2
+3
+Sorted array using Bubble Sort:
+1 2 3 8 9
+Time taken: 0.000000 seconds  
     </pre>
 </body>
 
